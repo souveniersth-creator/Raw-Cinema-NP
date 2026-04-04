@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary-container": "#3a3b3b",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#4e3700",
+                        "on-surface-variant": "#4e4639",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "primary": "#775a19",
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary-container": "#a5a5a4",
+                        "inverse-primary": "#e9c176",
+                        "on-surface": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#7f7667",
+                        "primary-container": "#c5a059",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "on-background": "#1c1b1b",
+                        "secondary": "#5f5e5e",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "surface-container": "#f0edec",
+                        "tertiary": "#5e5e5e",
+                        "on-secondary-container": "#636262",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "surface-tint": "#775a19",
+                        "secondary-container": "#e2dfde",
+                        "tertiary-fixed": "#e3e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+
+        .editorial-underline {
+            position: relative;
+        }
+
+        .editorial-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #775a19;
+            transition: width 0.3s ease;
+        }
+
+        .editorial-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation -->
+    <header class="bg-[#fcf9f8] dark:bg-[#1c1b1b] fixed top-0 w-full z-50">
+        <nav class="flex justify-between items-center px-6 md:px-12 h-20 w-full">
+            <div class="text-2xl font-['Noto_Serif'] font-bold tracking-tighter text-[#1c1b1b] dark:text-[#fcf9f8]">
+                CURATOR</div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#775a19] border-b border-[#775a19] pb-1 hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Home</a>
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] dark:text-[#fcf9f8] hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Blog</a>
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#775a19] border-b border-[#775a19] pb-1 hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Gallery</a>
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] dark:text-[#fcf9f8] hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Shop</a>
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] dark:text-[#fcf9f8] hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Booking</a>
+                <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] dark:text-[#fcf9f8] hover:tracking-[0.2em] transition-all duration-300"
+                    href="#">Contacts</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="material-symbols-outlined text-on-surface" data-icon="search">search</button>
+                <button class="material-symbols-outlined text-on-surface" data-icon="shopping_bag">shopping_bag</button>
+                <button class="md:hidden material-symbols-outlined text-on-surface" data-icon="menu">menu</button>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-32 pb-24 px-6 md:px-12">
+        <!-- Header Section -->
+        <section class="max-w-7xl mx-auto mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
+            <div class="max-w-2xl">
+                <span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-4 block">Archive
+                    2026</span>
+                <h1 class="font-headline text-5xl md:text-7xl font-bold leading-tight text-on-surface">Visual Narrative
+                    &amp; <span class="italic font-normal">Light Studies</span></h1>
+            </div>
+            <div class="hidden md:block text-right">
+                <p class="font-label text-xs tracking-widest uppercase text-secondary">Curating moments through</p>
+                <p class="font-label text-xs tracking-widest uppercase text-secondary">an editorial lens.</p>
+            </div>
+        </section>
+        <!-- Category Filter -->
+        <section class="max-w-7xl mx-auto mb-16 border-b border-outline-variant border-opacity-20 pb-4 overflow-x-auto">
+            <div class="flex gap-12 whitespace-nowrap">
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-primary font-bold border-b border-primary pb-4 transition-all">All
+                    Projects</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Fashion</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Lifestyle</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Nature</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Portraits</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Studio</button>
+                <button
+                    class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface hover:text-primary transition-all pb-4">Video</button>
+            </div>
+        </section>
+        <!-- Masonry Grid -->
+        <section class="max-w-7xl mx-auto">
+            <div class="masonry-grid">
+                <!-- Item 1: High Vertical -->
+                <div class="masonry-item group cursor-pointer">
+                    <div class="overflow-hidden bg-surface-container-low aspect-[3/4]">
+                        <img alt="Editorial portrait"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Editorial close-up portrait of a woman with dramatic shadows and soft warm lighting in a high-fashion studio setting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHXbP2YrGl_QLUVkcHVel5vASut2ovhH2VosGzAmda33VGXDwCBXBNrU5K7JXus2xAyQRzLSQVmJwF3745qUlmoWHhRMUpATW-Wdyg2AFk7lhRwW4auvJJTbZ7ataM1rCNmVRfcDbjTB21rRZpvG54iFp8psxLdRVp0N1R8pd3Q5Obf7_xdRTJUJmINj0RH5TRy08Zeerhb2c1-q87XgG9CT0kTRUdfxoXbF6_hecMXDR9J7esoI---_HuzG2X-3_m_ax9eZNCLf8" />
+                    </div>
+                    <div class="mt-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline text-lg text-on-surface">The Silhouette Series</h3>
+                            <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Fashion /
+                                2026</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            data-icon="north_east">north_east</span>
+                    </div>
+                </div>
+                <!-- Item 2: Square -->
+                <div class="masonry-item group cursor-pointer">
+                    <div class="overflow-hidden bg-surface-container-low aspect-square">
+                        <img alt="Architectural study"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Minimalist architectural photography showing clean lines of a brutalist concrete building against a sharp blue sky"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAehsVaGqqFaPhprLZT7F34xv94Nz5ASjbm2MD8mmjB9k4xYOyu9y35-xfDDoKbdjxh21K4M84D6a7tA9iV17mk0x_K9Pc6qYNwCIzasaP5172hcjgi3TuFN1tsEBrSAX-JZU03AzcLrIhfcD4rWbIh2BVNCBzxHGqqLkVK_ZiXZ0T0FuEIAHfKN3s5a7t9Npvm_GcWhsL7Cc8UvKJiJa7Ijn1d2uimpiu2mgK9ixMM6hOFgYih3Iw0VyPqsNYUzG9iWtsXgHKTmjc" />
+                    </div>
+                    <div class="mt-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline text-lg text-on-surface">Monolith Structure</h3>
+                            <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Studio /
+                                2023</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            data-icon="north_east">north_east</span>
+                    </div>
+                </div>
+                <!-- Item 3: Landscape -->
+                <div class="masonry-item group cursor-pointer">
+                    <div class="overflow-hidden bg-surface-container-low aspect-[16/9]">
+                        <img alt="Forest landscape"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Dreamy forest landscape with morning mist filtering through tall trees and lush green ferns in soft focus"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcbB5wLecU0MsGAfV17cRBaCoPmMR-bnxyoXHBeAjIzEFUje8FyAc_-ukmWc1cbOk3vu-GVLqgQa1V7zh8kXEofhHEYcy3MDg-P4YKCuKfPgMWe0wjWmaAMAQCUh0UPO__7iskbwpT8aShbXpvV5M8XGPUR32Qf6_2i2rte0k64qyn1EQx8-V4dbgsXM40PKIb1pwWAm2sMTnfjVqaXxT6oPP_ml5FZ78MMptLNLkk9mVWqSBMv8X0j0WdvanIBEIh9CNnqPsH0Vo" />
+                    </div>
+                    <div class="mt-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline text-lg text-on-surface">Ancient Growth</h3>
+                            <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Nature /
+                                2026</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            data-icon="north_east">north_east</span>
+                    </div>
+                </div>
+                <!-- Item 4: Asymmetric Circle Mask -->
+                <div class="masonry-item group cursor-pointer py-12">
+                    <div class="overflow-hidden bg-surface-container-low aspect-square rounded-full mx-auto w-4/5">
+                        <img alt="Minimal object"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Minimalist product shot of a sleek white ceramic vase on a light wood surface with soft morning light"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdCsc777fgaJe6SGU9CUvpPYQ6MZx4SIZ_6V0fjDLARLzOKb5sxqmLL3eFoR69sjL0q1-etDTevAbZJT0e2HXwhLTOd3A2nQa6XzJh26QKdR1ujNusgRPqui6gLyHXBplYZP4-vqzK7rN1NgldFuaQqXeaovBHXOJwgjLS6ZiFEk5d0U_qg6ARGT_ZgHf3lGMnSwBUdU6dG2nxzYmda4EwQNVi46Qnqf-q5wcsRE2UrfbxlKGGxf5Hl3M8YNrTXseeV8hzHpP8z54" />
+                    </div>
+                    <div class="mt-8 text-center">
+                        <h3 class="font-headline text-lg text-on-surface">Focal Points</h3>
+                        <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Lifestyle / 2026
+                        </p>
+                    </div>
+                </div>
+                <!-- Item 5: High Vertical 2 -->
+                <div class="masonry-item group cursor-pointer">
+                    <div class="overflow-hidden bg-surface-container-low aspect-[3/5]">
+                        <img alt="Street portrait"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Cinematic street photography portrait of a person in a bustling city at dusk with neon lights reflecting in puddles"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaCIjCqnY7NaeVMCS_wYoTkCbE9Do8tdi-3tu8x_eI1o2pyuDX4-NZ6-sq7utQ2lHdOx7coq-BVfiw5SF8P7XxcgEGA2sYMUID__VvesS8EpjObWL-Tp4U3nN3iiRAZWqFY8SyGvUkm_YzoupxCPchGFe7xV13gT4bUjrRShIlssn8t3UruapylxCp9diMgkdX4ftqDNkPyASPV62DtIvDG4Sv_NhxKcVjUg3Z0Bqod56uaGftA6WlabaUKG2RsI0mk0qvWG-6rY" />
+                    </div>
+                    <div class="mt-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline text-lg text-on-surface">After Hours</h3>
+                            <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Lifestyle /
+                                2023</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            data-icon="north_east">north_east</span>
+                    </div>
+                </div>
+                <!-- Item 6: Classic 4:3 -->
+                <div class="masonry-item group cursor-pointer">
+                    <div class="overflow-hidden bg-surface-container-low aspect-[4/3]">
+                        <img alt="Mountain peak"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Aerial view of snow-capped mountain peaks at sunrise with golden light hitting the ridges and deep blue shadows"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqK4F1cGSjW-HFO0sMx89-WIcwWPuFHdruOCpZpXs5kYnklpR7bnvasQmF0dCIfV5vn3xdqlkrCeWe1_u0JKWsZ67fLQxvdpQ4lc2zU2upq4hpJIwJUg9mw-B_WSGXRj6fLVZEJ2UIpn3Nqieiz8qxIssL80kCSIgGuZl-USHhAmmBKGq69dtQZWuqUvMuSlZatU55ljYuKtJmYWIcN031T7hSKrjaMYs6czwQfqzrIset8u2S8hQVX4M5VFablbvUX6Kb52MV3S4" />
+                    </div>
+                    <div class="mt-4 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline text-lg text-on-surface">The High Ground</h3>
+                            <p class="font-label text-[10px] tracking-widest uppercase text-secondary mt-1">Nature /
+                                2026</p>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            data-icon="north_east">north_east</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section
+            class="max-w-7xl mx-auto mt-32 py-24 bg-surface-container-low text-center border-t border-outline-variant border-opacity-10">
+            <h2 class="font-headline text-3xl md:text-5xl mb-8">Ready to start a <span class="italic">project?</span>
+            </h2>
+            <button
+                class="bg-primary text-on-primary font-label text-[12px] tracking-[0.2em] uppercase px-12 py-5 hover:bg-on-primary-container transition-colors">Book
+                a session</button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#dcd9d9] dark:bg-[#121212] w-full py-12 px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full gap-8">
+            <div class="text-lg font-['Noto_Serif'] font-bold text-[#1c1b1b]">CURATOR</div>
+            <div class="flex gap-12">
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] dark:text-[#fcf9f8] hover:text-[#775a19] transition-colors"
+                    href="#">Privacy Policy</a>
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] dark:text-[#fcf9f8] hover:text-[#775a19] transition-colors"
+                    href="#">Terms of Service</a>
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] dark:text-[#fcf9f8] hover:text-[#775a19] transition-colors"
+                    href="#">FAQ</a>
+            </div>
+            <div class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#775a19]">
+                © 2026 RAWCINEMA.NP. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+    <!-- FAB for quick contact -->
+    <div class="fixed bottom-8 right-8 z-40">
+        <button
+            class="bg-primary text-on-primary w-14 h-14 flex items-center justify-center shadow-xl hover:scale-105 transition-transform active:scale-95">
+            <span class="material-symbols-outlined" data-icon="mail">mail</span>
+        </button>
+    </div>
+</body>
+
+</html>

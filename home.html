@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#261900",
+                        "on-tertiary-container": "#3a3b3b",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#4e3700",
+                        "on-surface-variant": "#4e4639",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d1c5b4",
+                        "primary": "#775a19",
+                        "primary-fixed": "#ffdea5",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary-container": "#a5a5a4",
+                        "inverse-primary": "#e9c176",
+                        "on-surface": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#7f7667",
+                        "primary-container": "#c5a059",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "on-background": "#1c1b1b",
+                        "secondary": "#5f5e5e",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "surface-container": "#f0edec",
+                        "tertiary": "#5e5e5e",
+                        "on-secondary-container": "#636262",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-fixed-dim": "#e9c176",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "surface-tint": "#775a19",
+                        "secondary-container": "#e2dfde",
+                        "tertiary-fixed": "#e3e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: #fcf9f8;
+        }
+
+        .hero-mask {
+            clip-path: circle(40% at 50% 50%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-mask {
+                clip-path: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Shell -->
+    <nav class="fixed top-0 w-full z-50 bg-[#fcf9f8] flex justify-between items-center px-6 md:px-12 h-20">
+        <div class="text-2xl font-['Noto_Serif'] font-bold tracking-tighter text-[#1c1b1b]" style="">RAWCINEMA.NP</div>
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-10">
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#775a19] border-b border-[#775a19] pb-1 hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Home</a>
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Blog</a>
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Gallery</a>
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Shop</a>
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Booking</a>
+            <a class="font-['Noto_Serif'] uppercase tracking-[0.1em] text-[12px] font-medium text-[#1c1b1b] hover:tracking-[0.2em] transition-all duration-300"
+                href="#" style="">Contacts</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="material-symbols-outlined text-on-surface" data-icon="shopping_bag"
+                style="">shopping_bag</button>
+            <button class="md:hidden material-symbols-outlined text-on-surface" data-icon="menu" style="">menu</button>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative h-[921px] flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden bg-surface">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+                <span class="text-[20vw] font-headline font-bold text-on-surface leading-none" style="">EDITORIAL</span>
+            </div>
+            <!-- High Impact Image with Focal Point Mask -->
+            <div class="relative w-full max-w-6xl h-[614px] md:h-[716px] flex items-center justify-center">
+                <img class="w-full h-full object-cover grayscale brightness-90"
+                    data-alt="striking high-fashion portrait of a woman with avant-garde styling, monochromatic lighting with warm gold highlights, soft grain texture, editorial mood"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTthQENCK3LGArM-s7BY3xYi5gY9EPUQjz-dzNHIFs7bTf7c9M9EkjtVNUylk68yB3WZ4ES_3QWg0QltmRedYuhMzIalEQX5XkFsB-FmdatiVQO6qHanrUPvVZKg8ROGAKphc6W3dJCumNspw-A7_MCfBq5wiCjzwUJXjK2sup6w3I32y2i-i7ISrWyPnmRjKYCd3HDe9FOvPGFMRtjP5wczaoYOf0G2IuJ04yS7q6Kw4c08S81U7TWIAKz5jOY1pl_iiGKDhl7w4"
+                    style="" />
+                <!-- Floating Minimalist Text -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                    <h1 class="text-white font-headline text-4xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl mix-blend-difference"
+                        style="">
+                        Love will tear us apart again.
+                    </h1>
+                </div>
+            </div>
+            <div class="absolute bottom-12 right-12 hidden md:block">
+                <p class="font-label text-[10px] tracking-[0.2em] uppercase text-primary" style="">SCROLL TO DISCOVER
+                </p>
+                <div class="w-[1px] h-12 bg-primary mx-auto mt-4"></div>
+            </div>
+        </section>
+        <!-- Asymmetric Narrative Section -->
+        <section class="py-32 px-6 md:px-12 bg-surface">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+                <div class="md:col-span-5">
+                    <span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-8 block" style="">THE
+                        VISION</span>
+                    <h2 class="text-5xl md:text-7xl font-headline leading-tight mb-8" style="">Capturing the <br />
+                        <span class="italic" style="">unspoken</span> rhythm.
+                    </h2>
+                    <p class="font-body text-secondary leading-relaxed max-w-md" style="">
+                        In the heart of every frame lies a story waiting to be told. Our approach to photography is
+                        rooted in the digital curator philosophy—where every element is intentionally selected to evoke
+                        raw, human emotion.
+                    </p>
+                    <div class="mt-12">
+                        <button
+                            class="bg-primary text-on-primary px-12 py-5 font-label text-[12px] tracking-[0.1em] uppercase hover:bg-on-primary-container transition-colors"
+                            style="">
+                            VIEW PORTFOLIO
+                        </button>
+                    </div>
+                </div>
+                <div class="md:col-span-7 flex justify-end">
+                    <div class="w-full md:w-4/5 aspect-[4/5] bg-surface-container-low p-4">
+                        <img class="w-full h-full object-cover"
+                            data-alt="artistic fashion photograph of flowing fabrics in a minimalist industrial space, sharp shadows, high contrast black and white"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxVPKeZKDy2XMdlqRcwZmVPswwfBphcuSs2SizBn7qlZV73IP6ZmrtF3c9sg-geo6n7l9Ok1Rl7AO0qc6tEhYHd_m-NCy4KkNJzE2HEVkdKvx3oY4bLjSYIfqr4qLSKZX9lN2i1Y6USzuPIF1jx9CM7F5u7tQa-MFLSSTcjcizdSsGZy8pS58w3EM2JDSzc__w86Jk2OaZnGrr2_c2IaCC_MeNXGYcz9R155fB3EPx5OQzABjRRPvjoXcHmJFfHISxPeRLsqpgKpI"
+                            style="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Latest Works Section (New) -->
+        <section class="py-32 px-6 md:px-12 bg-surface">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-headline mb-4" style="">Latest <span class="text-primary"
+                        style="">Works</span></h2>
+                <div class="w-12 h-[2px] bg-outline-variant mx-auto mb-12"></div>
+                <!-- Category Filter -->
+                <div
+                    class="flex flex-wrap justify-center gap-x-8 gap-y-4 font-label text-[10px] tracking-[0.2em] uppercase text-secondary">
+                    <a class="text-primary border-b border-primary pb-1" href="#" style="">ALL</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">FASHION</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">LIFESTYLE</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">NATURE</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">PORTRAITS</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">STUDIO</a>
+                    <a class="hover:text-on-surface transition-colors" href="#" style="">VIDEO</a>
+                </div>
+            </div>
+            <!-- Masonry Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                <!-- Col 1 -->
+                <div class="grid gap-6">
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 1"
+                            class="w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTuOXsxvsS45MootezTBcJpZLJKgm-aWcNsckIxM0pBegr2NtPwHdDG9OcDA1ZfVT5GBh7QwBop-uhtq_3DtRQX8THhN1F44ET7e5OMt9bxLh8orMqWhumzqapCUxPpgtYyBYLLX4IjBTjJXfhao9-OjD36a3Xvm4mU4PbxUrH43649R3zjx7yIE7LGwji0skQe0YzaWH3iaAmPFYyCPU08FgwpVh2egDSI-hATu7nPOhkZCZU_zadUfshHl-vEskkM0q5TDWebhQ"
+                            style="" />
+                        <div
+                            class="absolute top-4 right-4 text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="play_circle"
+                                style="">play_circle</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 2"
+                            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALrH3_IDQXf4GuUMHADy5Hz6iEza9wdwcsN_mmovd9IWlpWqdLSBWTp1Msctp9yKooqItKGGA7DSdjH9C_5E-CC9m4Ym2KOfJader7zdxr6u3_McEBrC9LQEIdOk7IViNFeK_fDmOSxNLcJAbQKCg-hjCswGmMUqJoqVzn4ciMjgcaoNFgp-kelOvjw79s5WGQfidpOUGjEL1a8OT8-rm5Ey--c10DfetdI-53jATJhnCW9r3ZN_n9Sooni1QokGKrcEc7mfNvq4s"
+                            style="" />
+                    </div>
+                </div>
+                <!-- Col 2 -->
+                <div class="grid gap-6">
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 3"
+                            class="w-full aspect-[2/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxz6VWTcDUCFXKW1KXFt7aY068oap3Mk7iAdF73SVIG-ICng7Tw-R2M5h2A9COswHm3H4vSnxTrZUsAq-STCw1y5oYEpMTC7pvPg7TMJcS-f4PaP9hi-g-fIIvYB_5O8ZePQBfVelp4V-6D7h9pGqMFdgEpuqaA4JzPjh_2Nt5_MMPZFsdlOAgucQDxfU5nbl42mwlJp8saQUExQ_XmW-IyC160Kf-CVrtgomj-pUrh7fZq7WkqFSlfu4uNxGzdeswo7vc8GinsYs"
+                            style="" />
+                        <div
+                            class="absolute top-4 right-4 text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="play_circle"
+                                style="">play_circle</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 4"
+                            class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTv2KscmUSapjIvIDjPDVOhSrSGQA-cApJTcw98q1-zZ6Eu8GnoGp46M7ByYGAFjeGLqNyIBQJO99zmNi3lPFV8_O7Y-nFsCDyJFD8AUFMr8qTFZ68tcJq3ZegPcJQmm1Fu8rCigMxym3dP0z67pWkN8WBRSttlQtfPG2cd7SVXv9_9DGRYqV9nNGd7RckbLWaA2Gh_2Zw9zlGuxjPi6Ib_HdLZmEYS8zmk_8i3rJXfNpJPHLWlqEZzuO3HA1srUAXdsrUrkCvu4"
+                            style="" />
+                    </div>
+                </div>
+                <!-- Col 3 -->
+                <div class="grid gap-6">
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 5"
+                            class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUX9nEnLBXMiS9sBEq8_AeghM9cSbQBCQZuPeSmfTDu9-iA-y4v-tqwsURZRc0ub7_sG32HfceDFxlDtW__SFdy-eDOJSEAk-DSSoN7GXSr9zdVjEFYcKuKBVyH2JmlzFs5jhMI_IszDWzaF6ARuzhhNIJYlSDRBDwreCS_C91q3ioQMmTNedImt0Vl6YTIJK-Xkf-BeeX0IPasg4i4lOvj6BSs3LD302S26BNBAafac9hYHxprsQQjJDb3J_dsnnwAKyEgMcYS78"
+                            style="" />
+                    </div>
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 6"
+                            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAyVBOCr53Da5B0rJkChX0txzRenqTVa6XJAe0n5ajnrdAdUSpVFEcJOMYC6Yh05Caf-Ej6dqU_DXFtUR8h_KAX2Hx941Fulhd-P9jmWyzzTVBUxhv7cui2JSStlH9DhI9FlftypmZlGSMAAoOBYenSQd_QGZZGuMMJ774fY58DlBv0d_CR1YF0rTRp0ZSYoygVLRk-cxRDdI3zQQZk4aJcvrUDvT4o6fLoRvbBtv4vMJIWuOB-6wOhaO5zjt_mGsPQfdjd-fm6wk"
+                            style="" />
+                        <div
+                            class="absolute top-4 right-4 text-white opacity-80 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-[20px]" data-icon="play_circle"
+                                style="">play_circle</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 7"
+                            class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzTb5s8e_88v2iIc0-Kmb-QmDaWtM4i_Y8RcsPruHYfn4x--o9nntr_A_7Gu1UjDUjd0yEL2y9BPGsd91yJzuvsaAVeJr7Pumc1GHtJVLvbwIDujSJ4vjxIhLm9JdwO0DaeHhs8goT8_VT_8AMso72FXf8SlpMDkwLaikcqOJbiiPeMX5An-x53MGukhrsQ9z42LYZnlR4MLCU1wvNG2T4g3OD5eyqmVGef0CyhMG6DxB4wpnMq6UAGoONY5EfmwmsvcDJMRdy3iQ"
+                            style="" />
+                    </div>
+                </div>
+                <!-- Col 4 -->
+                <div class="grid gap-6">
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 8"
+                            class="w-full aspect-[2/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTthQENCK3LGArM-s7BY3xYi5gY9EPUQjz-dzNHIFs7bTf7c9M9EkjtVNUylk68yB3WZ4ES_3QWg0QltmRedYuhMzIalEQX5XkFsB-FmdatiVQO6qHanrUPvVZKg8ROGAKphc6W3dJCumNspw-A7_MCfBq5wiCjzwUJXjK2sup6w3I32y2i-i7ISrWyPnmRjKYCd3HDe9FOvPGFMRtjP5wczaoYOf0G2IuJ04yS7q6Kw4c08S81U7TWIAKz5jOY1pl_iiGKDhl7w4"
+                            style="" />
+                    </div>
+                    <div class="relative overflow-hidden group cursor-pointer">
+                        <img alt="Latest work 9"
+                            class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxVPKeZKDy2XMdlqRcwZmVPswwfBphcuSs2SizBn7qlZV73IP6ZmrtF3c9sg-geo6n7l9Ok1Rl7AO0qc6tEhYHd_m-NCy4KkNJzE2HEVkdKvx3oY4bLjSYIfqr4qLSKZX9lN2i1Y6USzuPIF1jx9CM7F5u7tQa-MFLSSTcjcizdSsGZy8pS58w3EM2JDSzc__w86Jk2OaZnGrr2_c2IaCC_MeNXGYcz9R155fB3EPx5OQzABjRRPvjoXcHmJFfHISxPeRLsqpgKpI"
+                            style="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Gallery Grid -->
+        <section class="bg-surface-container-low py-32 px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-4">
+                <h3 class="text-4xl font-headline tracking-tighter" style="">Curated Works</h3>
+                <p class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface" style="">SERIES 01 // 2026
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[300px]">
+                <div class="md:col-span-2 md:row-span-2 group overflow-hidden relative">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="editorial street fashion photography, tall model in neutral tones, urban architectural background, golden hour lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTuOXsxvsS45MootezTBcJpZLJKgm-aWcNsckIxM0pBegr2NtPwHdDG9OcDA1ZfVT5GBh7QwBop-uhtq_3DtRQX8THhN1F44ET7e5OMt9bxLh8orMqWhumzqapCUxPpgtYyBYLLX4IjBTjJXfhao9-OjD36a3Xvm4mU4PbxUrH43649R3zjx7yIE7LGwji0skQe0YzaWH3iaAmPFYyCPU08FgwpVh2egDSI-hATu7nPOhkZCZU_zadUfshHl-vEskkM0q5TDWebhQ"
+                        style="" />
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="font-label text-[12px] text-white tracking-[0.3em] uppercase" style="">VIEW
+                            SERIES</span>
+                    </div>
+                </div>
+                <div class="md:col-span-1 md:row-span-1 group overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="close-up artistic portrait of a man, dramatic chiaroscuro lighting, deep shadows, fine art photography style"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuALrH3_IDQXf4GuUMHADy5Hz6iEza9wdwcsN_mmovd9IWlpWqdLSBWTp1Msctp9yKooqItKGGA7DSdjH9C_5E-CC9m4Ym2KOfJader7zdxr6u3_McEBrC9LQEIdOk7IViNFeK_fDmOSxNLcJAbQKCg-hjCswGmMUqJoqVzn4ciMjgcaoNFgp-kelOvjw79s5WGQfidpOUGjEL1a8OT8-rm5Ey--c10DfetdI-53jATJhnCW9r3ZN_n9Sooni1QokGKrcEc7mfNvq4s"
+                        style="" />
+                </div>
+                <div class="md:col-span-1 md:row-span-2 group overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="fashion model in motion, blurred background, cinematic grain, editorial aesthetic, high fashion styling"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxz6VWTcDUCFXKW1KXFt7aY068oap3Mk7iAdF73SVIG-ICng7Tw-R2M5h2A9COswHm3H4vSnxTrZUsAq-STCw1y5oYEpMTC7pvPg7TMJcS-f4PaP9hi-g-fIIvYB_5O8ZePQBfVelp4V-6D7h9pGqMFdgEpuqaA4JzPjh_2Nt5_MMPZFsdlOAgucQDxfU5nbl42mwlJp8saQUExQ_XmW-IyC160Kf-CVrtgomj-pUrh7fZq7WkqFSlfu4uNxGzdeswo7vc8GinsYs"
+                        style="" />
+                </div>
+                <div class="md:col-span-1 md:row-span-1 group overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="minimalist fashion detail shot, hand holding a flower, soft natural light, oatmeal and charcoal color palette"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhTv2KscmUSapjIvIDjPDVOhSrSGQA-cApJTcw98q1-zZ6Eu8GnoGp46M7ByYGAFjeGLqNyIBQJO99zmNi3lPFV8_O7Y-nFsCDyJFD8AUFMr8qTFZ68tcJq3ZegPcJQmm1Fu8rCigMxym3dP0z67pWkN8WBRSttlQtfPG2cd7SVXv9_9DGRYqV9nNGd7RckbLWaA2Gh_2Zw9zlGuxjPi6Ib_HdLZmEYS8zmk_8i3rJXfNpJPHLWlqEZzuO3HA1srUAXdsrUrkCvu4"
+                        style="" />
+                </div>
+            </div>
+        </section>
+        <!-- Packages Section -->
+        <section class="bg-surface py-20 px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/30">
+                <!-- Package 1 -->
+                <div
+                    class="relative h-[600px] overflow-hidden group flex flex-col items-center justify-between py-16 text-center border-r border-outline-variant/30 last:border-r-0">
+                    <img alt="Lifestyle Session"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTuOXsxvsS45MootezTBcJpZLJKgm-aWcNsckIxM0pBegr2NtPwHdDG9OcDA1ZfVT5GBh7QwBop-uhtq_3DtRQX8THhN1F44ET7e5OMt9bxLh8orMqWhumzqapCUxPpgtYyBYLLX4IjBTjJXfhao9-OjD36a3Xvm4mU4PbxUrH43649R3zjx7yIE7LGwji0skQe0YzaWH3iaAmPFYyCPU08FgwpVh2egDSI-hATu7nPOhkZCZU_zadUfshHl-vEskkM0q5TDWebhQ"
+                        style="" />
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div class="w-[1px] h-8 bg-primary mb-6"></div>
+                        <h3 class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface mb-2" style="">
+                            LIFESTYLE SESSION</h3>
+                        <div class="text-[120px] font-headline font-bold leading-none text-on-surface tracking-tighter"
+                            style="">$69</div>
+                        <button
+                            class="mt-8 bg-primary-container text-on-primary-container px-10 py-4 font-label text-[10px] tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300"
+                            style="">PURCHASE</button>
+                    </div>
+                    <div class="relative z-10">
+                        <a class="font-label text-[10px] tracking-widest uppercase text-on-surface flex items-center gap-2 hover:text-primary transition-colors"
+                            href="#" style="">OPTIONS <span class="material-symbols-outlined text-[14px]"
+                                data-icon="add" style="">add</span></a>
+                    </div>
+                </div>
+                <!-- Package 2 -->
+                <div
+                    class="relative h-[600px] overflow-hidden group flex flex-col items-center justify-between py-16 text-center border-r border-outline-variant/30 last:border-r-0">
+                    <img alt="Studio Session"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAyVBOCr53Da5B0rJkChX0txzRenqTVa6XJAe0n5ajnrdAdUSpVFEcJOMYC6Yh05Caf-Ej6dqU_DXFtUR8h_KAX2Hx941Fulhd-P9jmWyzzTVBUxhv7cui2JSStlH9DhI9FlftypmZlGSMAAoOBYenSQd_QGZZGuMMJ774fY58DlBv0d_CR1YF0rTRp0ZSYoygVLRk-cxRDdI3zQQZk4aJcvrUDvT4o6fLoRvbBtv4vMJIWuOB-6wOhaO5zjt_mGsPQfdjd-fm6wk"
+                        style="" />
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div class="w-[1px] h-8 bg-primary mb-6"></div>
+                        <h3 class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface mb-2" style="">
+                            STUDIO SESSION</h3>
+                        <div class="text-[120px] font-headline font-bold leading-none text-on-surface tracking-tighter"
+                            style="">$99</div>
+                        <button
+                            class="mt-8 bg-primary-container text-on-primary-container px-10 py-4 font-label text-[10px] tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300"
+                            style="">PURCHASE</button>
+                    </div>
+                    <div class="relative z-10">
+                        <a class="font-label text-[10px] tracking-widest uppercase text-on-surface flex items-center gap-2 hover:text-primary transition-colors"
+                            href="#" style="">OPTIONS <span class="material-symbols-outlined text-[14px]"
+                                data-icon="add" style="">add</span></a>
+                    </div>
+                </div>
+                <!-- Package 3 -->
+                <div
+                    class="relative h-[600px] overflow-hidden group flex flex-col items-center justify-between py-16 text-center border-r border-outline-variant/30 last:border-r-0">
+                    <img alt="Portrait Session"
+                        class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzTb5s8e_88v2iIc0-Kmb-QmDaWtM4i_Y8RcsPruHYfn4x--o9nntr_A_7Gu1UjDUjd0yEL2y9BPGsd91yJzuvsaAVeJr7Pumc1GHtJVLvbwIDujSJ4vjxIhLm9JdwO0DaeHhs8goT8_VT_8AMso72FXf8SlpMDkwLaikcqOJbiiPeMX5An-x53MGukhrsQ9z42LYZnlR4MLCU1wvNG2T4g3OD5eyqmVGef0CyhMG6DxB4wpnMq6UAGoONY5EfmwmsvcDJMRdy3iQ"
+                        style="" />
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div class="w-[1px] h-8 bg-primary mb-6"></div>
+                        <h3 class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface mb-2" style="">
+                            PORTRAIT SESSION</h3>
+                        <div class="text-[120px] font-headline font-bold leading-none text-on-surface tracking-tighter"
+                            style="">$49</div>
+                        <button
+                            class="mt-8 bg-primary-container text-on-primary-container px-10 py-4 font-label text-[10px] tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-300"
+                            style="">PURCHASE</button>
+                    </div>
+                    <div class="relative z-10">
+                        <a class="font-label text-[10px] tracking-widest uppercase text-on-surface flex items-center gap-2 hover:text-primary transition-colors"
+                            href="#" style="">OPTIONS <span class="material-symbols-outlined text-[14px]"
+                                data-icon="add" style="">add</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Editorial Feature Section -->
+        <section class="py-40 px-6 md:px-12 bg-surface">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-12 block" style="">THE
+                    ATELIER</span>
+                <blockquote class="text-3xl md:text-5xl font-headline italic leading-relaxed mb-16" style="">
+                    "Photography is the architecture of a moment, curated through the lens of human experience."
+                </blockquote>
+                <div class="flex justify-center gap-16">
+                    <div class="text-center">
+                        <p class="text-4xl font-headline" style="">12+</p>
+                        <p class="font-label text-[9px] tracking-widest uppercase mt-2 opacity-60" style="">Exhibitions
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-headline" style="">200k</p>
+                        <p class="font-label text-[9px] tracking-widest uppercase mt-2 opacity-60" style="">Captures</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-headline" style="">01</p>
+                        <p class="font-label text-[9px] tracking-widest uppercase mt-2 opacity-60" style="">Philosophy
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Journal Section (Blog) -->
+        <section class="py-32 px-6 md:px-12 bg-surface-container-low">
+            <div class="mb-16">
+                <h3 class="text-4xl font-headline tracking-tighter mb-4" style="">The Journal</h3>
+                <div class="w-20 h-[1px] bg-primary"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Blog Item 1 -->
+                <div class="flex flex-col group">
+                    <div class="aspect-[16/10] overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="dark atmospheric interior with a single shaft of light, smoke or dust particles visible, cinematic and moody"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUX9nEnLBXMiS9sBEq8_AeghM9cSbQBCQZuPeSmfTDu9-iA-y4v-tqwsURZRc0ub7_sG32HfceDFxlDtW__SFdy-eDOJSEAk-DSSoN7GXSr9zdVjEFYcKuKBVyH2JmlzFs5jhMI_IszDWzaF6ARuzhhNIJYlSDRBDwreCS_C91q3ioQMmTNedImt0Vl6YTIJK-Xkf-BeeX0IPasg4i4lOvj6BSs3LD302S26BNBAafac9hYHxprsQQjJDb3J_dsnnwAKyEgMcYS78"
+                            style="" />
+                    </div>
+                    <span class="font-label text-[9px] tracking-[0.2em] uppercase text-primary mb-3" style="">April 12,
+                        2026</span>
+                    <h4 class="text-xl font-headline mb-4 group-hover:text-primary transition-colors" style="">
+                        Shadowplay: The Art of Subtraction</h4>
+                    <a class="font-label text-[10px] tracking-[0.1em] uppercase flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                        href="#" style="">
+                        Read More <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward"
+                            style="">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Blog Item 2 -->
+                <div class="flex flex-col group">
+                    <div class="aspect-[16/10] overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="vintage camera on a wooden desk with film canisters and old photographs, nostalgic and warm lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAyVBOCr53Da5B0rJkChX0txzRenqTVa6XJAe0n5ajnrdAdUSpVFEcJOMYC6Yh05Caf-Ej6dqU_DXFtUR8h_KAX2Hx941Fulhd-P9jmWyzzTVBUxhv7cui2JSStlH9DhI9FlftypmZlGSMAAoOBYenSQd_QGZZGuMMJ774fY58DlBv0d_CR1YF0rTRp0ZSYoygVLRk-cxRDdI3zQQZk4aJcvrUDvT4o6fLoRvbBtv4vMJIWuOB-6wOhaO5zjt_mGsPQfdjd-fm6wk"
+                            style="" />
+                    </div>
+                    <span class="font-label text-[9px] tracking-[0.2em] uppercase text-primary mb-3" style="">March 28,
+                        2026</span>
+                    <h4 class="text-xl font-headline mb-4 group-hover:text-primary transition-colors" style="">The Grain
+                        of Reality: Film Revival</h4>
+                    <a class="font-label text-[10px] tracking-[0.1em] uppercase flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                        href="#" style="">
+                        Read More <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward"
+                            style="">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- Blog Item 3 -->
+                <div class="flex flex-col group">
+                    <div class="aspect-[16/10] overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="stage lighting and silhouettes of a production crew, professional atmosphere, behind the scenes editorial"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzTb5s8e_88v2iIc0-Kmb-QmDaWtM4i_Y8RcsPruHYfn4x--o9nntr_A_7Gu1UjDUjd0yEL2y9BPGsd91yJzuvsaAVeJr7Pumc1GHtJVLvbwIDujSJ4vjxIhLm9JdwO0DaeHhs8goT8_VT_8AMso72FXf8SlpMDkwLaikcqOJbiiPeMX5An-x53MGukhrsQ9z42LYZnlR4MLCU1wvNG2T4g3OD5eyqmVGef0CyhMG6DxB4wpnMq6UAGoONY5EfmwmsvcDJMRdy3iQ"
+                            style="" />
+                    </div>
+                    <span class="font-label text-[9px] tracking-[0.2em] uppercase text-primary mb-3" style="">March 05,
+                        2026</span>
+                    <h4 class="text-xl font-headline mb-4 group-hover:text-primary transition-colors" style="">BTS: The
+                        September Issue Editorial</h4>
+                    <a class="font-label text-[10px] tracking-[0.1em] uppercase flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                        href="#" style="">
+                        Read More <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward"
+                            style="">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter Signup / Tonal Section -->
+        <section class="py-32 px-6 md:px-12 bg-surface-dim">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 max-w-7xl mx-auto">
+                <div class="max-w-md">
+                    <h3 class="text-3xl font-headline mb-4" style="">Join the Curator Circle.</h3>
+                    <p class="font-body text-secondary text-sm" style="">Monthly insights into our creative process,
+                        upcoming exhibitions, and exclusive shop drops.</p>
+                </div>
+                <form class="flex w-full max-w-md border-b border-outline-variant">
+                    <input class="bg-transparent border-none focus:ring-0 w-full font-body text-sm py-4"
+                        placeholder="Your Email Address" type="email" />
+                    <button class="font-label text-[10px] tracking-widest uppercase text-primary px-4" style=""
+                        type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Shell -->
+    <footer class="bg-[#dcd9d9] w-full py-12 px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full gap-8">
+            <div class="text-lg font-['Noto_Serif'] font-bold text-[#1c1b1b]" style="">RAWCINEMA.NP</div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] hover:text-[#775a19] transition-colors"
+                    href="#" style="">Privacy Policy</a>
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] hover:text-[#775a19] transition-colors"
+                    href="#" style="">Terms of Service</a>
+                <a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] hover:text-[#775a19] transition-colors"
+                    href="#" style="">FAQ</a>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-on-surface hover:text-primary transition-colors" href="#" style=""><span
+                        class="material-symbols-outlined" data-icon="share" style="">share</span></a>
+                <a class="text-on-surface hover:text-primary transition-colors" href="#" style=""><span
+                        class="material-symbols-outlined" data-icon="mail" style="">mail</span></a>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-outline-variant/20 text-center">
+            <p class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#1c1b1b] opacity-60" style="">© 2026
+                RAWCINEMA.NP ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
