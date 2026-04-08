@@ -27,12 +27,14 @@ export default function Component() {
           </div>
 
           <div className="relative w-full max-w-5xl aspect-video flex items-center justify-center overflow-hidden mx-auto mt-8">
-            <iframe
-              className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              src="https://www.youtube.com/embed/hkjtFKvHRT0?autoplay=1&mute=1&controls=0&loop=1&playlist=hkjtFKvHRT0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <video
+              className="w-full h-full object-cover"
+              src="/videos/hero-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            ></video>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/20">
               {/* <h1 className="text-white font-headline text-4xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl mix-blend-difference">
