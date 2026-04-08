@@ -5,6 +5,8 @@ export default function Component() {
 
   useEffect(() => {
     if (videoRef.current) {
+      // Force muted to be true on the DOM element (crucial for Chrome/Safari)
+      videoRef.current.muted = true;
       videoRef.current.play().catch(error => {
         console.error("Autoplay was prevented:", error);
       });
@@ -45,6 +47,9 @@ export default function Component() {
               loop
               muted
               playsInline
+              preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
             ></video>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/20">
