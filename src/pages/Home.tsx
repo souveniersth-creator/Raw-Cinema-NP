@@ -23,16 +23,21 @@ export default function Component() {
 
         <section className="relative h-[921px] flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden bg-surface">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
-            <span className="text-[20vw] font-headline font-bold text-on-surface leading-none">EDITORIAL</span>
+            <span className="text-[20vw] font-headline font-bold text-on-surface leading-none">RAWCINE</span>
           </div>
 
-          <div className="relative w-full max-w-6xl h-[614px] md:h-[716px] flex items-center justify-center">
-            <img className="w-full h-full object-cover grayscale brightness-90" data-alt="striking high-fashion portrait of a woman with avant-garde styling, monochromatic lighting with warm gold highlights, soft grain texture, editorial mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTthQENCK3LGArM-s7BY3xYi5gY9EPUQjz-dzNHIFs7bTf7c9M9EkjtVNUylk68yB3WZ4ES_3QWg0QltmRedYuhMzIalEQX5XkFsB-FmdatiVQO6qHanrUPvVZKg8ROGAKphc6W3dJCumNspw-A7_MCfBq5wiCjzwUJXjK2sup6w3I32y2i-i7ISrWyPnmRjKYCd3HDe9FOvPGFMRtjP5wczaoYOf0G2IuJ04yS7q6Kw4c08S81U7TWIAKz5jOY1pl_iiGKDhl7w4" />
+          <div className="relative w-full max-w-6xl h-[614px] md:h-[716px] flex items-center justify-center overflow-hidden">
+            <iframe
+              className="absolute w-[300vw] h-[300%] md:w-[150vw] md:h-[150%] pointer-events-none"
+              src="https://www.youtube.com/embed/hkjtFKvHRT0?autoplay=1&mute=1&controls=0&loop=1&playlist=hkjtFKvHRT0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-              <h1 className="text-white font-headline text-4xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl mix-blend-difference">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/20">
+              {/* <h1 className="text-white font-headline text-4xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl mix-blend-difference">
                 Love will tear us apart again.
-              </h1>
+              </h1> */}
             </div>
           </div>
           <div className="absolute bottom-12 right-12 hidden md:block">
