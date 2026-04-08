@@ -39,20 +39,24 @@ export default function Component() {
           </div>
 
           <div className="relative w-full max-w-5xl aspect-video flex items-center justify-center overflow-hidden mx-auto mt-8">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover pointer-events-none"
-              src="/videos/hero-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              disablePictureInPicture
-              disableRemotePlayback
-            ></video>
+            <div 
+              className="w-full h-full"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <video
+                    class="w-full h-full object-cover pointer-events-none"
+                    src="/videos/hero-video.mp4"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="auto"
+                  ></video>
+                `
+              }}
+            />
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/20">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/20 pointer-events-none">
               {/* <h1 className="text-white font-headline text-4xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl mix-blend-difference">
                 Love will tear us apart again.
               </h1> */}
