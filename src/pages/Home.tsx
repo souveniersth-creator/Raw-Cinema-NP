@@ -28,7 +28,7 @@ export default function Component() {
 
           <div className="relative w-full max-w-6xl h-[614px] md:h-[716px] flex items-center justify-center overflow-hidden">
             <iframe
-              className="absolute w-[300vw] h-[300%] md:w-[150vw] md:h-[150%] pointer-events-none"
+              className="absolute top-1/2 left-1/2 w-auto max-w-none h-[120%] md:h-[105%] aspect-[16/9] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               src="https://www.youtube.com/embed/hkjtFKvHRT0?autoplay=1&mute=1&controls=0&loop=1&playlist=hkjtFKvHRT0&rel=0&modestbranding=1&playsinline=1&vq=hd1080"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
