@@ -21,7 +21,7 @@ export default function Component() {
       </nav>
       <main className="pt-20">
 
-        <section className="relative h-[921px] flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden bg-surface">
+        <section className="relative min-h-[50vh] md:h-[921px] py-24 md:py-0 flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden bg-surface">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
             <span className="text-[20vw] font-headline font-bold text-on-surface leading-none">RAWCINE</span>
           </div>
