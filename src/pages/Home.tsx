@@ -1,6 +1,16 @@
-
+import { useEffect, useRef } from "react";
 
 export default function Component() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Autoplay was prevented:", error);
+      });
+    }
+  }, []);
+
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-[#fcf9f8] flex justify-between items-center px-6 md:px-12 h-20">
@@ -28,7 +38,8 @@ export default function Component() {
 
           <div className="relative w-full max-w-5xl aspect-video flex items-center justify-center overflow-hidden mx-auto mt-8">
             <video
-              className="w-full h-full object-cover"
+              ref={videoRef}
+              className="w-full h-full object-cover pointer-events-none"
               src="/videos/hero-video.mp4"
               autoPlay
               loop
